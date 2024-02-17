@@ -31,12 +31,12 @@ User.init(
         modelName: 'User',
     }
 )
-User.beforeCreate(async (user) => {
+User.beforeCreate(async function(user) {
     const hashedPassWord = await bcrypt.hash(user.password,10);
     user.password = hashedPassWord
 })
 
-User.prototype.verifyPassword = async (password) => {
+User.prototype.verifyPassword = async function (password){
     return await bcrypt.compare(password, this.password)
 }
 
