@@ -3,7 +3,11 @@ const sequelize = require('../config/connection')
 const bcrypt = require('bcrypt')
 
 class User extends Model{}
-
+// User Model 
+// id
+//username
+//password
+//entry count
 User.init(
     {
         id: {
