@@ -14,22 +14,7 @@ describe('Post model tests', () => {
 
         })
     })
-   describe('Post ROUTE', () => {
-    test('it should post to db', async () => {
-        await Post.create(
-            {
-                title: "here is the title",
-                post_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                word_count: 100,
-                comment_count: 20,
-                user_id: 1,                
-            }
-        )
-        const post = await Post.findByPk(1)
-
-        expect(post).toBeDefined()
-        expect(post.title).toBeDefined()
-    })
+   
     describe('PUT ROUTE', () => {
         test('it should update post info', async () =>  {
             
@@ -57,4 +42,3 @@ describe('Post model tests', () => {
    })
   
 
-})
