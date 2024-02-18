@@ -1,5 +1,5 @@
 
-const User = require('../models/User')
+const {User} = require('../models')
 
 describe('it should get and create User Data', () => {
  
