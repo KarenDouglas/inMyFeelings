@@ -1,11 +1,13 @@
 const router = require('express').Router()
-const { Post } = require('../../models')
+const { Post, Comment } = require('../../models')
 const { findByPk } = require('../../models/User')
 // /api/posts
 router.get('/', async(req, res) => {
 
     try{
-        const posts = await Post.findAll()
+        const posts = await Post.findAll({
+            include: Comment
+        })
         return res.status(200).json(
             {
                 message: 'successfullly retrieved Posts',
@@ -32,13 +34,14 @@ router.get('/:id', async(req, res) => {
 })
 router.post('/:userID', async(req, res) => {
     try{
-        const {title, post_text, word_count, comment_count} = req.body
+        const {title, post_text, word_count, comment_count,category} = req.body
         const postData = await Post.create(
             {
                 title: title,
                 post_text: post_text,
                 word_count: word_count,
                 comment_count: comment_count,
+                category: category,
                 user_id: req.params.userID
             }
         )
@@ -71,5 +74,6 @@ router.delete('/:postID', async(req, res) => {
         return res.status(200).json({message: "Internal Server Error", error: err})
     }
 })
+
 
 module.exports = router

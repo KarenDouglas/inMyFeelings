@@ -1,4 +1,4 @@
-const {Post, Comment} = require('../models')
+const {Post, Comment, Category} = require('../models')
 
 describe('Post model tests', () => {
     describe('GET ROUTES', () => {
@@ -41,7 +41,7 @@ describe('Post model tests', () => {
    })
   
 
-describe('it should create a new comment', () => {
+describe('it should get a new comment', () => {
     test('create new comment', async() => {
         const comment = await Comment.findAll()
         expect(comment).toBeDefined()
