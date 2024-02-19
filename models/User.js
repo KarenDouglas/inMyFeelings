@@ -32,7 +32,8 @@ User.init(
     },
     {
         sequelize,
-        modelName: 'User',
+        underscored: true,
+        modelName: 'user',
     }
 )
 User.beforeCreate(async function(user) {
