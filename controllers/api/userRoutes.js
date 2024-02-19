@@ -46,12 +46,15 @@ router.post('/login', async (req, res) => {
         const user = await User.findOne({where:{user_name: user_name}
         })
         if(!user){
+            
             return res.status(400).json({message: " Incorrect username or password please try again"})
         }
         const verifyPassword = await user.verifyPassword(password)
         if(!verifyPassword){
             return res.status(400).json({message: " Incorrect username or password please try again"})
         }
+        req.session.userId= user.id
+    
         return res.status(200).json({message:"You are now logged in!", data: user})
     }catch(err){
         return res.status(500).json({error: 'Internal Server Error '})

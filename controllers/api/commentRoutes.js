@@ -17,6 +17,7 @@ router.get('/', async(req, res) => {
 })
 
 router.post('/:userID/:postID', async(req, res) => {
+    if(JSON.parse(req.session.userId) ===JSON.parse(req.params.userId)){
     try{
         const {comment_text} = req.body
        
@@ -35,6 +36,10 @@ router.post('/:userID/:postID', async(req, res) => {
         )
     }catch(err){
         return res.status(200).json({message: "Internal Server Error", error: err})
+    }
+    }else{
+    return res.render('signin')
+
     }
 })
 router.delete('/:commentID', async(req, res) => {

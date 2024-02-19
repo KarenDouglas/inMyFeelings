@@ -17,6 +17,7 @@ router.get('/', async(req, res) => {
     }catch(err){
         return res.status(200).json({message: "Internal Server Error", error: err})
     }
+    
 })
 
 router.get('/:id', async(req, res) => {
@@ -33,6 +34,8 @@ router.get('/:id', async(req, res) => {
     }
 })
 router.post('/:userID', async(req, res) => {
+    if(req.session.userId ===JSON.parse(req.params.userId)){
+       
     try{
         const {title, post_text, word_count, comment_count,category} = req.body
         const postData = await Post.create(
@@ -54,6 +57,10 @@ router.post('/:userID', async(req, res) => {
     }catch(err){
         return res.status(200).json({message: "Internal Server Error", error: err})
     }
+}else{
+    return res.render('signin')
+
+}
 })
 router.delete('/:postID', async(req, res) => {
     try{
