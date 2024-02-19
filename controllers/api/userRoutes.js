@@ -1,15 +1,17 @@
 const router = require('express').Router()
-const { User } = require('../../models')
+const { User, Post } = require('../../models')
 
 // /api/users/
 
 // get all user route route for develop
 router.get('/', async (req, res) => {
     try{
-        const users = await User.findAll()
+        const users = await User.findAll({
+            include: Post // Include the Post model to fetch associated posts
+        });
         return res.status(200).json({message: "successfully retrieved Users", data: [users]})
     }catch(err){
-        return res.status(200).json({message: "Internal Server Error", error: err})
+        return res.status(200).json({message: "Internal Server Error", error:err})
     }
 })
 // get user by user id route

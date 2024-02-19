@@ -38,6 +38,10 @@ Post.init(
             allowNull: false,
             defaultValue: 0
         },
+        category: {
+            type: DataTypes.ENUM('Mental Health', 'Inspiration', 'StotyTime', 'Rants', 'Thoughts', 'Spiritual','Humor', 'Shout Outs', 'Random'), 
+            allowNull: false,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -46,7 +50,6 @@ Post.init(
                 key: 'id'
             },
         },
-        
     },
     {
         sequelize,
