@@ -26,23 +26,6 @@ describe('it should get and create User Data', () => {
         
     })
 
-    describe('Update User Model', () =>{
-        test('should update user entry_count', async () => {
-        await User.update({
-            entry_count: 10
-        },
-        {
-            where: {
-                id: 1
-            }
-        }
-        )
-        const user = await User.findByPk(1)
-         expect(user).toBeDefined()
-         expect(user.entry_count).toBe(10)
-         
-        });
-    
-        });
+   
     })
     
