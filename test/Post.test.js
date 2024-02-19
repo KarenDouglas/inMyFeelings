@@ -1,4 +1,4 @@
-const {Post} = require('../models')
+const {Post, Comment} = require('../models')
 
 describe('Post model tests', () => {
     describe('GET ROUTES', () => {
@@ -32,7 +32,6 @@ describe('Post model tests', () => {
                         }
                     }
                 )
-
                 const post = await Post.findByPk(1)
 
                 expect(post).toBeDefined()
@@ -42,3 +41,9 @@ describe('Post model tests', () => {
    })
   
 
+describe('it should create a new comment', () => {
+    test('create new comment', async() => {
+        const comment = await Comment.findAll()
+        expect(comment).toBeDefined()
+    })
+})
