@@ -1,0 +1,38 @@
+#postComment{
+ display: flex;
+ flex-direction: column; 
+ min-height: 150px;  
+ border: black solid 1px;
+ justify-content: space-between;
+}
+#postComment textarea{
+    border:  black solid 1px;
+}
+#postComment button{
+    width: fit-content;
+    min-height: 30px;
+    margin-bottom: 10px;
+    font-size: larger;
+}
+.comment-container{
+    border: black solid 1px;
+    min-height: 50px;
+    margin-top: 30px;
+}
+#comments h2{
+    border: black solid 1px;
+    min-height: 50px;
+    margin-top: 30px;
+    font-size: large;
+    font-style: bold;
+}
+.post-container h2{
+    border: black solid 1px;
+    min-height: 40px;
+    font-size: x-large;
+}
+.text-container{
+    border: var(--blackBorder);
+    margin-top: 30px;
+    min-height: 100px;
+}

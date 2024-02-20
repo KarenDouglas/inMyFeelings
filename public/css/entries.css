@@ -30,6 +30,7 @@
     min-height: 100px;
     justify-content: space-between;
     cursor: pointer;
+    margin: 30px 0;
 }
 .creator{
     text-transform: capitalize;

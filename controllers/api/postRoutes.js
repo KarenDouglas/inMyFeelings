@@ -22,7 +22,7 @@ router.get('/', async(req, res) => {
 
 router.get('/:id', async(req, res) => {
     try{
-        const post = await Post.findByPk(req.params.id)
+        const post = await Post.findByPk(req.params.id, {include:Comment})
         return res.status(200).json(
             {
                 message: "successfully retrieved post",

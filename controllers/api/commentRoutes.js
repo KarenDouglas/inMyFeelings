@@ -17,7 +17,7 @@ router.get('/', async(req, res) => {
 })
 
 router.post('/:userID/:postID', async(req, res) => {
-    if(JSON.parse(req.session.userId) ===JSON.parse(req.params.userId)){
+    if(req.session.loggedIn){
     try{
         const {comment_text} = req.body
        

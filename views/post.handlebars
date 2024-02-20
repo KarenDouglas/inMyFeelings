@@ -1,11 +1,28 @@
-{{> dash-nav}}
+
+<body>
+    {{> dash-nav}}
 <section class="post-comment-container">
     
-<section class="post-container">
- {{post.title}}
-</section>
-<section class="comments-container">
+<section id="{{post.id}}" class="post-container">
+    <h2>{{post.title}}</h2>
+    <section class="text-container">
+        <article>
+          {{post.post_text}}
+        </article>
+    </section>
 
-comments
 </section>
+<aside class="comments-container">
+<form id="postComment">
+    <h2 id="{{userId}}">{{user}}</h2>
+    <textarea name="comment" id="commentTextArea" cols="30" rows="5" placeholder="ENTER COMMENT HERE..."></textarea>
+    <button>submit</button>
+</form>
+<section id="comments">
+    <h2>Comments:</h2>
 </section>
+
+</aside>
+</section>
+<script src="/js/entry.js"></script>
+</body>

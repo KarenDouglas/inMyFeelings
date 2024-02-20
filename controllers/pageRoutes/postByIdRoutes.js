@@ -4,7 +4,7 @@ router.get('/:id', async(req, res) => {
     try{
         const postData = await Post.findByPk(req.params.id)
         const post = postData.get({ plain: true });
-        return res.status(200).render('post',{post})
+        return res.status(200).render('post',{post: post, user:req.session.user_name,userId: req.session.userId})
     }catch(err){
         return res.status(200).json({message: `Internal Server Error`, error: err})
     }

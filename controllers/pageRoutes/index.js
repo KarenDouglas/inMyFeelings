@@ -5,6 +5,7 @@ const loginRoutes = require('./loginRoutes')
 const signupRoutes = require('./signupRoutes')
 const postByIdRoutes = require('./postByIdRoutes')
 
+
 router.use('/home', homeRoutes)
 router.use('/dashboard', dashboardRoutes)
 router.use('/login', loginRoutes)
