@@ -1,7 +1,26 @@
-{{> dash-nav}}
 
-  <section>
-    {{user.user_name}}
+<body>
+  {{> dash-nav}}
+  <section class="wrapper-container">
+   <section class="userIdOnDashboard" id="{{user.id}}">
+    <p>Welcome Back {{user.user_name}}</p>
+    
+    Have more to share...
+    <button>add post</button>
+   </section>
+   <section class="userEntries">
+    {{#each user.posts as |post|}}
+    <section class="userEntry">
+      <h3>{{post.title}}</h3>
+      <a href="/edit">
+        <button>Edit</button>
+      </a>
+      <button id="deleteBtn-{{post.id}}">delete</button>
+    </section>
+    {{/each}}
+   </section>
     
    
   </section>
+  <script src="/js/dashboard.js"></script>
+</body>

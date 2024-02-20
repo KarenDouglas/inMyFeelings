@@ -64,21 +64,24 @@ router.post('/:userID', async(req, res) => {
 })
 router.delete('/:postID', async(req, res) => {
     try{
-        const deletedPost = await Post.destroy(
+
+        
+       
+        
+    await Post.destroy(
             {
                 where: {
-                    id: req.params.postID
+                    id: parseInt(req.params.postID)
                 }
             }
         )
         return res.status(200).json(
             {
                 message: "your post has been successfully deleted",
-                data: deletedPost
             }
         )
     }catch(err){
-        return res.status(200).json({message: "Internal Server Error", error: err})
+        return res.status(500).json({message: "Internal Server Error", error: err})
     }
 })
 

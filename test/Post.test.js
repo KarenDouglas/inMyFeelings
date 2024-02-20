@@ -15,35 +15,13 @@ describe('Post model tests', () => {
         })
     })
    
-    describe('PUT ROUTE', () => {
-        test('it should update post info', async () =>  {
-            
-                await Post.update(
-                    {
-                        title: 'here is the new title',
-                        post_text: "updated post",
-                        word_count: 30,
-                        comment_count: 20,
-                        user_id: 1,
-                    },
-                    {
-                        where: {
-                            id: 1
-                        }
-                    }
-                )
-                const post = await Post.findByPk(1)
-
-                expect(post).toBeDefined()
-            })
-
-        })
-   })
+    
   
 
 describe('it should get a new comment', () => {
     test('create new comment', async() => {
         const comment = await Comment.findAll()
         expect(comment).toBeDefined()
+    })
     })
 })

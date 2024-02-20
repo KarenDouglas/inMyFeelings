@@ -47,7 +47,7 @@ router.delete('/:commentID', async(req, res) => {
         const deletedComment = await Comment.destroy(
             {
                 where: {
-                    id: req.params.commentID
+                    id: parseInt(req.params.commentID)
                 }
             }
         )

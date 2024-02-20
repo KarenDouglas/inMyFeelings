@@ -7,7 +7,7 @@ router.get('/:userId', async(req, res) => {
         try{
             const userData = await User.findOne({
                 where: { id: parseInt(req.params.userId) },
-                include: Comment // Include the Comment model to fetch associated comments
+                include: Post  // Include the Comment model to fetch associated comments
             }).catch((err) => { 
                 res.json(err);
             });
