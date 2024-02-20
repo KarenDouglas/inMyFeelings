@@ -62,6 +62,35 @@ router.post('/:userID', async(req, res) => {
 
 }
 })
+router.put('/:postId', async (req, res) => {
+    try {
+        // Extract data from the request body
+        const { title, post_text, category, user_id } = req.body;
+        
+        // Update the post with the provided postId
+        const updatedPost = await Post.update(
+            {
+                title: title,
+                post_text: post_text,
+                word_count:0,
+                comment_count: 0,
+                category: category,
+                user_id: user_id
+            },
+            {
+                where: {
+                    id: req.params.postId
+                }
+            }
+        );
+        
+        
+        return res.status(200).json({ message: `Successfully updated post with ID ${req.params.postId}`, data: updatedPost });
+    } catch(err) {
+        console.error(err);
+        return res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 router.delete('/:postID', async(req, res) => {
     try{
 

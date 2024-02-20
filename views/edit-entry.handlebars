@@ -1,1 +1,28 @@
-{{> dash-nav}}
+<body>
+    {{>dash-nav}}
+    <section class="wrapper-container" >
+        <form id="editEntry">
+            <input type="hidden" id="userId" value="{{userId}}">         
+            <input type="hidden" id="postId" value="{{postId}}">         
+            <input type="text" name="editTitle" id="editTitle" placeholder="ENTER TITLE">
+            <section>
+
+            <label for="category">Select category</label>
+            <select id="editSelect">
+                <option value="Mental Health">Mental Health</option>
+                <option value="Inspiration">Inspiration</option>
+                <option value="StoryTime">StoryTime</option>
+                <option value="Rants">Rants</option>
+                <option value="Thoughts">Thoughts</option>
+                <option value="Spiritual">Spiritual</option>
+                <option value="Humor">Humor</option>
+                <option value="Shout Outs">Shout Outs</option>
+                <option value="Random">Random</option>
+            </select>
+            </section>
+            <textarea name="editPost" id="editPost" cols="30" rows="10" placeholder="Start typing"></textarea>
+            <button type="submit">Publish</button>
+        </form>
+    </section>
+    <script src="/js/editEntry.js"></script>
+</body>
