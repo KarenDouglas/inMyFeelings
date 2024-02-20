@@ -1,5 +1,7 @@
 :root{
-    --full-width: 1400px
+    --full-width: 1400px;
+	--padding10: 10px;
+	--mid-width: 800px
 }
 
 
@@ -57,5 +59,36 @@ nav{
     justify-content: space-between;
     max-width: var(--full-width);
     margin: 0 auto;
-    padding: 10px;
+    padding: 30px var(--padding10);
+}
+
+.cta{
+	border: black solid 1px;
+	max-width: var(--full-width);
+	margin:  0 auto;
+	padding: 20px var(--padding10);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	min-height: 100px;
+}
+.cta p {
+	font-size: x-large;
+	line-height: 1.2;
+}
+.cta button{
+	margin: 10px 0;
+	width: fit-content;
+	font-size: medium;
+	padding: 10px;
+}
+.top-posts{
+	max-width: var(--full-width);
+	margin:  0 auto;
+}
+.entries-category{
+	display: flex;
+	max-width: var(--full-width);
+	margin:  0 auto;
+	justify-content: space-between;
 }

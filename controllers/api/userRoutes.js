@@ -54,6 +54,7 @@ router.post('/login', async (req, res) => {
             return res.status(400).json({message: " Incorrect username or password please try again"})
         }
         req.session.userId= user.id
+        req.session.loggedIn = true;
     
         return res.status(200).json({message:"You are now logged in!", data: user})
     }catch(err){

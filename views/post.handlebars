@@ -1,16 +1,11 @@
-<nav>
-    <h2>In My Feelings</h2>
-    <section>
-        <a href="/dashboard/1">
-            <button>write</button>
-        </a>
-        <a href="/login">
-            <button>logout</button>
-        </a>
-        <a href="/signup">
-            <button>{{user.user_name}}</button>
-        </a>
+{{> dash-nav}}
+<section class="post-comment-container">
+    
+<section class="post-container">
+ {{post.title}}
+</section>
+<section class="comments-container">
 
-    </section>
-  </nav>
-  title {{post.title}}
+comments
+</section>
+</section>

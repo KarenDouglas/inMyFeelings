@@ -1,0 +1,21 @@
+.middle{
+    height: 50px;
+    max-width: var(--full-width);
+    margin: 0 auto;
+    border: black solid 1px;
+}
+.post-comment-container{
+    display: flex;
+    max-width: var(--full-width);
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.post-container{
+    border: black solid 1px;
+    min-width: 60%;
+}
+.comments-container{
+    border: black solid 1px;
+    min-width: 30%;
+
+}

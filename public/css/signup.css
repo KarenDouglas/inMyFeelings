@@ -1,0 +1,9 @@
+#signupForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
+}
+#signupForm input, #signupForm button{
+    height: 50px;
+}
