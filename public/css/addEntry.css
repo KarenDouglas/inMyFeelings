@@ -1,0 +1,13 @@
+#addEntry{
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    justify-content: space-around;
+}
+#addEntry button{
+    width: fit-content;
+    padding: var(--padding10) ;
+}
+#addEntry input{
+    height: 50px;
+}

@@ -1,0 +1,20 @@
+.userIdOnDashboard{
+    border: var(--blackBorder);
+    min-height: 100px;
+    text-align:  center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.userIdOnDashboard button{
+    width: 90px;
+    padding: var(--padding10);
+    margin-bottom: 10px;
+}
+.userEntry{
+    margin-top: 20px;
+    border: var(--blackBorder);
+    display: flex;
+    justify-content: space-around;
+}

@@ -28,7 +28,7 @@ async function renderEntries(){
        const comments = entries[i].comments
        console.log(entry)
     $entries.innerHTML +=
-    `<a href="/post/${entry.user_id}">
+    `<a href="/post/${entry.id}">
     <section id="" class="entry-container">  
         <h2>${entry.title}</h2>
 

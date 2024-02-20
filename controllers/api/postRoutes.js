@@ -34,7 +34,7 @@ router.get('/:id', async(req, res) => {
     }
 })
 router.post('/:userID', async(req, res) => {
-    if(req.session.userId ===JSON.parse(req.params.userId)){
+    if(req.session.loggedIn){
        
     try{
         const {title, post_text, word_count, comment_count,category} = req.body

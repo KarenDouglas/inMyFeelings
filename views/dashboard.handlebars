@@ -4,15 +4,19 @@
   <section class="wrapper-container">
    <section class="userIdOnDashboard" id="{{user.id}}">
     <p>Welcome Back {{user.user_name}}</p>
-    
-    Have more to share...
+    <p> Have more to share...</p>
+    <a href="/addEntry">
     <button>add post</button>
+    </a>
    </section>
+   YOUR ENTRIES
    <section class="userEntries">
     {{#each user.posts as |post|}}
     <section class="userEntry">
+      <a href="/post/{{post.id}}">
       <h3>{{post.title}}</h3>
-      <a href="/edit">
+      </a>
+      <a href="/editEntry">
         <button>Edit</button>
       </a>
       <button id="deleteBtn-{{post.id}}">delete</button>
