@@ -63,6 +63,19 @@ router.post('/login', async (req, res) => {
     }
 })
 
+router.post('/logout', async (req, res) => {
+    try {
+        // Set loggedIn to false
+        req.session.loggedIn = false;
+        // Clear other session data if needed
+        req.session.userId = null;
+        req.session.user_name = null;
+        // Redirect to the home page
+        return res.redirect('/');
+    } catch (err) {
+        return res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 router.put('/:userId/:entryCount',async (req,res) => {
     try{
         const updatedUser = await User.update(

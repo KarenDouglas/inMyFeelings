@@ -8,7 +8,7 @@ const addEntryRoutes = require('./addEntryRoutes')
 const editEntryRoutes = require('./editEntryRoutes')
 
 
-router.use('/home', homeRoutes)
+router.use('/', homeRoutes)
 router.use('/dashboard', dashboardRoutes)
 router.use('/login', loginRoutes)
 router.use('/signup', signupRoutes)
