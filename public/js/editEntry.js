@@ -56,7 +56,7 @@ async function editEntryHandler(e) {
         const responseData = await response.json();
         console.log(responseData.data.id);
         // Redirect to another page if needed
-        // window.location.href = `/dashboard/${responseData.data.id}`;
+         window.location.href = `/dashboard/${$userIdInput.value}`;
     } catch (err) {
         console.error(err);
     }
