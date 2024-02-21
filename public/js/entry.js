@@ -38,25 +38,32 @@ async function submitCommentHandler(e){
     postData ={
         comment_text: $commentTextArea.value
     }
-    try{
-        const response = await fetch(`/api/comments/${$userInfo.id}/${$postContainer.id}`,{
-            method: 'POST', 
-            headers: {
-             'Content-Type': 'application/json', // Specify content type as JSON
-             // Add any other headers as needed
-           },
-           body: JSON.stringify(postData)
-         })
-         if(!response.ok){
-             throw new Error('Network response was not ok');
-         }
-         const responseData = await response.json();
-         console.log(responseData.data.id)
-        await renderComments()
-    }catch(err){
-        console.error(err)
+
+    if($userInfo.id){
+        try{
+            const response = await fetch(`/api/comments/${$userInfo.id}/${$postContainer.id}`,{
+                method: 'POST', 
+                headers: {
+                 'Content-Type': 'application/json', // Specify content type as JSON
+                 // Add any other headers as needed
+               },
+               body: JSON.stringify(postData)
+             })
+             if(!response.ok){
+                 throw new Error('Network response was not ok');
+             }
+             const responseData = await response.json();
+             console.log(responseData.data.id)
+            await renderComments()
+        }catch(err){
+            console.error(err)
+        }
+        
+
+    }else{
+        alert('must be logged in')
+        window.location.href = '/login'
     }
-    
     console.log(postData)
 }
 
