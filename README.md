@@ -2,7 +2,7 @@
 
 
 ## Live Site
-[View the Live Site]([https://karenportfolio.netlify.app/](https://inmyfeelings-617a8f81f293.herokuapp.com/))
+[View the Live Site]([https://inmyfeelings-617a8f81f293.herokuapp.com/]
 ![screencapture-inmyfeelings-617a8f81f293-herokuapp-2024-03-20-13_23_38](https://github.com/KarenDouglas/inMyFeelings/assets/79128405/eb0b45bd-d03d-4c91-8a9f-45d9843490d1)
 
 # Description
